@@ -3,53 +3,59 @@
 {% load  static %}
 
 {% block panel-content %}
+<div class="form-group">
+  <input type="email" name="logemail" class="form-style" placeholder="Your Email" id="logemail" autocomplete="off">
+  <i class="input-icon uil uil-at"></i>
+</div>
 
 <div class="grid-x grid-margin-x align-center">
-  <h3 class="cell" style="margin-bottom: 1em; text-align: center;">Datos de Producto</h3>  
+  <h3 class="cell" style="margin-bottom: 1em; text-align: center;color:white;">Registro de Nuevo Producto</h3>
   <form class="cell medium-9 grid-x grid-margin-x" method="POST">{% csrf_token %}
-      
     <div class="cell medium-6">
-      <label>Codigo de barras:</label>
+      <label style="color:white;">Nombre:</label>
+      <div class="input-group">
+        <span class="input-group-label"><i class="fi-book"></i></span>
+        {{form.name}}
+      </div>
+    </div>
+    <div class="cell medium-6">
+      <label style="color:white;">Codigo de barras:</label>
+
       <div class="input-group">
         <span class="input-group-label"><i class="fi-align-justify"></i></span>
         {{ form.barcode }}
       </div>
+
       {% for error in form.barcode.errors %}
         <p class="cell" style="color: red;">
           {{ error|escape }}
         </p>
       {% endfor %}
     </div>
-    <div class="cell medium-6">
-      <label>Nombre:</label>
-      <div class="input-group">
-        <span class="input-group-label"><i class="fi-book"></i></span>
-        {{form.name}}
-      </div>
-    </div>
+
 
     <div class="cell medium-6">
-      <label>Proveedor:</label>
-      <div class="input-group">
+      <label style="color:white;">Proveedor:</label>
+      <div class="input-group" style="">
         {{form.provider}}
       </div>
     </div>
     <div class="cell medium-6">
-      <label>Marca:</label>
+      <label style="color:white;">Marca:</label>
       <div class="input-group">
         {{form.marca}}
       </div>
     </div>
 
     <div class="cell medium-6">
-        <label>Unidad de Medida:</label>
+        <label style="color:white;">Unidad de Medida:</label>
         <div class="input-group">
           <span class="input-group-label"><i class="fi-price-tag"></i></span>
           {{ form.unit }}
         </div>
       </div>
     <div class="cell medium-6">
-      <label>Fecha de Vencimiento:</label>
+      <label style="color:white;">Fecha de Vencimiento:</label>
       <div class="input-group">
         <span class="input-group-label"><i class="fi-calendar"></i></span>
         {{ form.due_date }}
@@ -57,7 +63,7 @@
     </div>
 
     <div class="cell medium-6">
-        <label>Precio Compra:</label>
+        <label style="color:white;">Precio Compra:</label>
         <div class="input-group">
           <span class="input-group-label"><i class="fi-dollar"></i></span>
           {{form.purchase_price}}
@@ -69,7 +75,7 @@
         {% endfor %}
     </div>
     <div class="cell medium-6">
-        <label>Precio Venta:</label>
+        <label style="color:white;">Precio Venta:</label>
         <div class="input-group">
           <span class="input-group-label"><i class="fi-dollar"></i></span>
           {{form.sale_price}}
@@ -82,7 +88,7 @@
     </div>
 
     <div class="cell medium-12">
-      <label>Cantidad en Almacen:</label>
+      <label style="color:white;">Cantidad en Almacen:</label>
       <div class="input-group">
         <span class="input-group-label"><i class="fi-list-number"></i></span>
         {{form.count}}
@@ -90,7 +96,7 @@
     </div>
 
     <div class="cell medium-12">
-        <label>Descripcion del producto:</label>
+        <label style="color:white;">Descripcion del producto:</label>
         <div class="input-group">
           {{form.description}}
         </div>

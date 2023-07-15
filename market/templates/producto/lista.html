@@ -61,8 +61,8 @@
           <td>{{producto.count}}</td>
           <td>{{producto.num_sale}}</td>
           <td>
-            <a href="{% url 'producto_app:producto-update' producto.id %}" class="button"><i class="fi-pencil"></i></a>
-            <a href="{% url 'producto_app:producto-detail' producto.id %}" class="button warning"><i class="fi-eye"></i></a>
+            <a href="{% url 'producto_app:producto-update' producto.id %}" class="hollow button "><i class="fi-clipboard-pencil"></i></a>
+            <a href="{% url 'producto_app:producto-detail' producto.id %}" class="hollow button warning"><i class="fi-info"></i></a>
           </td>
         </tr>
         {% endfor %}

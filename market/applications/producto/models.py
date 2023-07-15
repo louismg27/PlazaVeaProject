@@ -66,6 +66,7 @@ class Product(TimeStampedModel):
         ('2', 'Unidades'),
     )
 
+
     barcode = models.CharField(
         max_length=13,
         unique=True

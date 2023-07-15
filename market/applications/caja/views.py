@@ -15,7 +15,7 @@ from .models import CloseBox
 from .functions import detalle_ventas_no_cerradas
 
 
-class ReporteCierreCajaView(VentasPermisoMixin, TemplateView):
+class ReporteCierreCajaView(TemplateView):
 
     template_name = 'caja/index.html'
 

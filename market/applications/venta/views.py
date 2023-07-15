@@ -22,7 +22,7 @@ from .forms import VentaForm, VentaVoucherForm
 from .functions import procesar_venta
 
 
-class AddCarView(VentasPermisoMixin, FormView):
+class AddCarView( FormView):
     template_name = 'venta/index.html'
     form_class = VentaForm
     success_url = '.'

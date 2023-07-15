@@ -99,11 +99,13 @@
       </div>
     
 
-    <div class="cell medium-6">
-      <button type="submit" class="success button" style="width: 200px;">Guardar</button>
+    <div class="  cell medium-12 width:100%; height:100%; width:100%; display:flex; flex-direction:row;">
+      <button type="submit" class="btn  "  >Guardar</button>
       {% if product %}
-      <a href="{% url 'producto_app:producto-delete' product.id %}" class="alert button clear">Eliminar</a>
-      {% endif %}
+      <div style="margin-top:1em; width:100%;">
+        <a href="{% url 'producto_app:producto-delete' product.id %}" class="button-red" style="color:red;" >Eliminar</a>
+        {% endif %}
+      </div>
     </div>
   </form>
 </div>

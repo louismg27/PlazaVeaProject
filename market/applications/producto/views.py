@@ -19,7 +19,7 @@ from .forms import ProductForm
 from applications.utils import render_to_pdf
 
 
-class ProductListView(AlmacenPermisoMixin, ListView):
+class ProductListView(ListView):
     template_name = "producto/lista.html"
     context_object_name = 'productos'
 

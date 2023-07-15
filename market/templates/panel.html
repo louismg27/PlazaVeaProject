@@ -10,50 +10,38 @@
     <div class="off-canvas position-left reveal-for-large" id="my-info" data-off-canvas data-position="left" style="background-color: #2E4053;">
       <div class="row column">
         <h3 style="text-align: center; padding: 0.3em; color: #F2F3F4 ;">Alquileres</h3>
+
         <ul class="vertical menu">
             <li>
-              <a href="#" class="button secondary " style="margin-bottom: 1rem;" ><span  >Hostal XPectra</span></a>
+              <a href="#" class="button secondary " style="margin-bottom: 5px;" ><span  >Operaciones</span></a>
 
               <ul class="nested vertical menu" style=" display:flex; flex-direction:column; align-items:center; padding:0;margin:0;">
                 <li class="{% if request.resolver_match.url_name == 'producto-lista' %}button-success{% endif %}"style="width:100%; max-width:none;">
-                  <a href="{% url 'producto_app:producto-lista' %}" class="button" >  Huesped </a>
+                  <a href="{% url 'producto_app:producto-lista' %}" class="button" >  Producto </a>
                 </li>
-                <div style="margin-bottom: 0.2rem;"> </div>
-                <li class="{% if request.resolver_match.url_name == 'producto-filtros' %}button-primary{% endif %} "style="width:100%; max-width:none;">
-                  <a href="{% url 'producto_app:producto-filtros' %}" class="button" >Reportes</a>
+                <li class="{% if request.resolver_match.url_name == 'venta-index' %}button-success{% endif %}"style="width:100%; max-width:none;">
+                  <a href="{% url 'venta_app:venta-index' %}" class="button" >  Realizar Nueva Venta </a>
                 </li>
+
+                  <li class="{% if request.resolver_match.url_name == 'caja-index' %}button-success{% endif %}"style="width:100%; max-width:none;">
+                      <a href="{% url 'caja_app:caja-index' %}"  class="button" >  Cerrar Caja </a>
+                  </li>
+
               </ul>
+
+                <a href="#" class="button secondary " style="margin-bottom: 5px; margin-top:3em;" ><span  >Gestor de Usuarios</span></a>
+                <ul class="nested vertical menu" style=" display:flex; flex-direction:column; align-items:center; padding:0;margin:0;">
+
+                    <li class="{% if request.resolver_match.url_name == 'index-admin' %}button-success{% endif %}"style="width:100%; max-width:none;">
+                        <a href="{% url 'home_app:index-admin' %}" class="button" >  Administracion </a>
+                    </li>
+                    <li class="{% if request.resolver_match.url_name == 'user-lista' %}button-success{% endif %}"style="width:100%; max-width:none;">
+                        <a href="{% url 'users_app:user-lista' %}" class="button" >  Usuarios </a>
+                    </li>
+                </ul>
             </li>
         </ul>
-        <ul class="vertical menu">
-            <li>
-              <a href="#"><span class="label warning">Ventas</span></a>
-              <ul class="nested vertical menu">
-                <li class="{% if request.resolver_match.url_name == 'venta-index' %}activeli{% endif %}">
-                  <a href="{% url 'venta_app:venta-index' %}" style="color: white;">Vender</a>
-                </li>
-                <li class="{% if request.resolver_match.url_name == 'caja-index' %}activeli{% endif %}">
-                  <a href="{% url 'caja_app:caja-index' %}" style="color: white;">Cerrar Caja</a>
-                </li>
-              </ul>
-            </li>
-        </ul>
-        <ul class="vertical menu">
-            <li>
-              <a href="#"><span class="label warning">Administracion</span></a>
-              <ul class="nested vertical menu">
-                <li class="{% if request.resolver_match.url_name == 'index-admin' %}activeli{% endif %}">
-                  <a href="{% url 'home_app:index-admin' %}" style="color: white;">Administracion</a>
-                </li>
-                <li class="{% if request.resolver_match.url_name == 'user-lista' %}activeli{% endif %}">
-                  <a href="{% url 'users_app:user-lista' %}" style="color: white;">Usuarios</a>
-                </li>
-                <li class="{% if request.resolver_match.url_name == 'admin-reporte' %}activeli{% endif %}">
-                  <a href="{% url 'home_app:admin-reporte' %}" style="color: white;">Reportes</a>
-                </li>
-              </ul>
-            </li>
-        </ul>
+
       </div>
     </div>
 
@@ -62,7 +50,7 @@
       <div class="grid-x">
         <div class="cell top-bar" style="background-color: #424242;">
           <div class="top-bar-left">
-            <h4 style="color: white;">Sesion de: {{ user.full_name }}</h4>
+            <h4 style="color: white;">Usuario: {{ user.full_name }}</h4>
           </div>
           <div class="top-bar-right">
             <a href="{% url 'users_app:user-logout' %}">

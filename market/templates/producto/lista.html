@@ -21,52 +21,55 @@
 
 
 <!--  Titulos para ordenar-->
-  <div class="cell grid-x grid-margin-x">
-    <div class="cell small-2">
+  <div class="">
+    <div style="display:flex;justify-content:center;align-items:center;">
       <a href="?order=name">
-        <span class="label warning">Por Nombre</span>
+        <span class="button alert">Ordenar por Nombre</span>
       </a>
     </div>
-    <div class="cell small-2">
-      <a href="?order=date">
-        <span class="label secondary">Por Fecha</span>
-      </a>
+
+<!--    <div class="cell small-2">-->
+<!--      <a href="?order=date">-->
+<!--        <span class="label secondary">Por Fecha</span>-->
+<!--      </a>-->
+<!--    </div>-->
+<!--    <div class="cell small-2">-->
+<!--      <a href="?order=stok">-->
+<!--        <span class="label">Por Stok</span>-->
+<!--      </a>-->
+<!--    </div>-->
+
+    <!--  Tabla-->
+    <div class="cell grid-x grid-margin-x" style="margin-top: 2em; margin-left:0; margin-right:0; width:100%;">
+      <table class="hover">
+        <thead>
+        <th>COD</th>
+        <th>Nombres</th>
+        <th>Precio Venta</th>
+        <th>Precio Compra</th>
+        <th>Stok</th>
+        <th>Num Ventas</th>
+        <th>Acciones</th>
+        </thead>
+        <tbody>
+        {% for producto in productos %}
+        <tr>
+          <td><strong>{{producto.barcode}}</strong></td>
+          <td>{{producto.name}}</td>
+          <td>{{producto.sale_price}}</td>
+          <td>{{producto.purchase_price}}</td>
+          <td>{{producto.count}}</td>
+          <td>{{producto.num_sale}}</td>
+          <td>
+            <a href="{% url 'producto_app:producto-update' producto.id %}" class="button"><i class="fi-pencil"></i></a>
+            <a href="{% url 'producto_app:producto-detail' producto.id %}" class="button warning"><i class="fi-eye"></i></a>
+          </td>
+        </tr>
+        {% endfor %}
+        </tbody>
+      </table>
     </div>
-    <div class="cell small-2">
-      <a href="?order=stok">
-        <span class="label">Por Stok</span>
-      </a>
-    </div>
-  </div>
-<!--  Tabla-->
-  <div class="cell grid-x grid-margin-x" style="margin-top: 2em; margin-left:0; margin-right:0; width:100%;">
-    <table class="hover">
-      <thead>
-      <th>COD</th>
-      <th>Nombres</th>
-      <th>Precio Venta</th>
-      <th>Precio Compra</th>
-      <th>Stok</th>
-      <th>Num Ventas</th>
-      <th>Acciones</th>
-      </thead>
-      <tbody>
-      {% for producto in productos %}
-      <tr>
-        <td><strong>{{producto.barcode}}</strong></td>
-        <td>{{producto.name}}</td>
-        <td>{{producto.sale_price}}</td>
-        <td>{{producto.purchase_price}}</td>
-        <td>{{producto.count}}</td>
-        <td>{{producto.num_sale}}</td>
-        <td>
-          <a href="{% url 'producto_app:producto-update' producto.id %}" class="button"><i class="fi-pencil"></i></a>
-          <a href="{% url 'producto_app:producto-detail' producto.id %}" class="button warning"><i class="fi-eye"></i></a>
-        </td>
-      </tr>
-      {% endfor %}
-      </tbody>
-    </table>
+
   </div>
 
 

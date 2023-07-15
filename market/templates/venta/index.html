@@ -6,20 +6,30 @@
 
 <div class="grid-x grid-margin-x">
   <div class="cell grid-x grid-margin-x">
-    <form class="cell small-7 input-group" method="POST">{% csrf_token %}
-      <span class="input-group-label">COD/CAN:</span>
-      {{ form.barcode }}
-      {{ form.count }}
-      <div class="input-group-button">
-        <input type="submit" class="button secondary" value="Agregar">
+
+
+    <form class="cell small-7 grid-x align-middle" method="POST">
+      {% csrf_token %}
+      <div class="cell small-5 input-group">
+        <span class="input-group-label">COD/CAN:</span>
+        {{ form.barcode }}
+      </div>
+      <div class="cell auto">
+        <div class="input-group">
+          {{ form.count }}
+        </div>
+      </div>
+      <button type="submit"  class="cell btn"  >Agregar</button></p>
+      <div class="cell shrink">
+        <div class="input-group">
+          <div class="input-group-button">
+            <input type="submit" class="button secondary" style="display:flex;align-items:center;" value="Agregar">
+
+          </div>
+        </div>
       </div>
     </form>
-    <form class="cell small-3" action="{% url 'venta_app:venta-simple' %}" method="POST">{% csrf_token %}
-      <button type="submit" class="cell button success">
-        <i class="fi-shopping-cart"></i>
-        <span>Pagar Todo</span>
-      </button>
-    </form>
+
     <div class="cell small-2">
       <a class="cell hollow button secondary" href="{% url 'venta_app:venta-list' %}">
         <i class="fi-trash"></i>
@@ -81,10 +91,10 @@
         </button>
       </form>
       
-      <button data-open="exampleModal1" class="cell button success" style="padding: 1.5em;">
-        <i class="fi-print"></i>
-          <span>Cobrar e Imprimir</span>
-      </button>
+<!--      <button data-open="exampleModal1" class="cell button success" style="padding: 1.5em;">-->
+<!--        <i class="fi-print"></i>-->
+<!--          <span>Cobrar e Imprimir</span>-->
+<!--      </button>-->
 
       <form class="cell" action="{% url 'venta_app:carshop-delete_all' %}" 
         method="POST">{% csrf_token %}

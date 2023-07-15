@@ -7,18 +7,20 @@
 <div class="off-canvas-wrapper">
   <div class="off-canvas-wrapper-inner" data-off-canvas-wrapper>
 
-    <div class="off-canvas position-left reveal-for-large" id="my-info" data-off-canvas data-position="left" style="background-color: #424242;">
+    <div class="off-canvas position-left reveal-for-large" id="my-info" data-off-canvas data-position="left" style="background-color: #999999;">
       <div class="row column">
-        <h3 style="text-align: center; padding: 0.3em; color: #ffae00;">Market DJ</h3>
+        <h3 style="text-align: center; padding: 0.3em; color: #000000;">Alquileres</h3>
         <ul class="vertical menu">
             <li>
-              <a href="#"><span class="label warning">Almacen</span></a>
-              <ul class="nested vertical menu">
-                <li class="{% if request.resolver_match.url_name == 'producto-lista' %}activeli{% endif %}">
-                  <a href="{% url 'producto_app:producto-lista' %}" style="color: white;">Productos</a>
+              <a href="#" class="button secondary " style="margin-bottom: 1rem;" ><span  >Hostal XPectra</span></a>
+
+              <ul class="nested vertical menu" style=" display:flex; flex-direction:column; align-items:center; padding:0;margin:0;">
+                <li class="{% if request.resolver_match.url_name == 'producto-lista' %}button-success{% endif %}"style="width:100%; max-width:none;">
+                  <a href="{% url 'producto_app:producto-lista' %}" class="button" >  Huesped </a>
                 </li>
-                <li class="{% if request.resolver_match.url_name == 'producto-filtros' %}activeli{% endif %}">
-                  <a href="{% url 'producto_app:producto-filtros' %}" style="color: white;">Reportes</a>
+                <div style="margin-bottom: 0.2rem;"> </div>
+                <li class="{% if request.resolver_match.url_name == 'producto-filtros' %}button-primary{% endif %} "style="width:100%; max-width:none;">
+                  <a href="{% url 'producto_app:producto-filtros' %}" class="button" >Reportes</a>
                 </li>
               </ul>
             </li>
@@ -74,5 +76,9 @@
         {% endblock panel-content %}
       </div>
   </div>
+
 </div>
+
+
+
 {% endblock content %}

@@ -28,7 +28,7 @@ class PanelAdminView(AdminPermisoMixin, TemplateView):
         return context
     
 
-class ReporteAdmin(AdminPermisoMixin, ListView):
+class ReporteAdmin(ListView):
     template_name = "home/reporte_admin.html"
     context_object_name = "resumen_ventas_mes"
 

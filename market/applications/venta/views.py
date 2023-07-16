@@ -33,6 +33,7 @@ class AddCarView( FormView):
         context["total_cobrar"] = CarShop.objects.total_cobrar()
         # formulario para venta con voucher
         context['form_voucher'] = VentaVoucherForm
+        context['ventas']=Sale.objects.ventas_no_cerradas()
         return context
     
     def form_valid(self, form):
@@ -91,14 +92,14 @@ class ProcesoVentaSimpleView(VentasPermisoMixin, View):
     """ Procesa una venta simple """
 
     def post(self, request, *args, **kwargs):
-        #
+
         procesar_venta(
             self=self,
             type_invoce=Sale.SIN_COMPROBANTE,
             type_payment=Sale.CASH,
             user=self.request.user,
         )
-        #
+
         return HttpResponseRedirect(
             reverse(
                 'venta_app:venta-index'

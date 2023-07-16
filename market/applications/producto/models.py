@@ -99,7 +99,7 @@ class Product(TimeStampedModel):
     )
     count = models.PositiveIntegerField(
         'cantidad en almacen',
-        default=0
+        default=1
     )
     purchase_price = models.DecimalField(
         'precio compra',

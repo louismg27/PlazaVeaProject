@@ -30,4 +30,14 @@ urlpatterns = [
         views.ProductDetailView.as_view(),
         name='producto-detail',
     ),
+    path(
+        'producto/detalle/print/<pk>/', 
+        views.ProductDetailViewPdf.as_view(),
+        name='producto-detail_print',
+    ),
+    path(
+        'producto/reporte/', 
+        views.FiltrosProductListView.as_view(),
+        name='producto-filtros',
+    ),
 ]

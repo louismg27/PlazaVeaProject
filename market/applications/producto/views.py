@@ -31,13 +31,13 @@ class ProductListView(ListView):
 
 
 
-class ProductCreateView(AlmacenPermisoMixin, CreateView):
+class ProductCreateView(CreateView):
     template_name = "producto/form_producto.html"
     form_class = ProductForm
     success_url = reverse_lazy('producto_app:producto-lista')
 
 
-class ProductUpdateView(AlmacenPermisoMixin, UpdateView):
+class ProductUpdateView(UpdateView):
     template_name = "producto/form_producto.html"
     model = Product
     form_class = ProductForm
@@ -45,13 +45,13 @@ class ProductUpdateView(AlmacenPermisoMixin, UpdateView):
 
 
 
-class ProductDeleteView(AlmacenPermisoMixin, DeleteView):
+class ProductDeleteView(DeleteView):
     template_name = "producto/delete.html"
     model = Product
     success_url = reverse_lazy('producto_app:producto-lista')
 
 
-class ProductDetailView(AlmacenPermisoMixin, DetailView):
+class ProductDetailView(DetailView):
     template_name = "producto/detail.html"
     model = Product
 

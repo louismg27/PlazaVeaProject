@@ -25,6 +25,10 @@ class PanelAdminView(AdminPermisoMixin, TemplateView):
         context["total_anulaciones"] = Sale.objects.total_ventas_anuladas_dia()
         context["stok_cero"] = Product.objects.productos_en_cero().count()
         context["resumen_semana"] = SaleDetail.objects.resumen_ventas()[:7]
+        context["num_ventas_hoy"] = Sale.objects.ventas_no_cerradas().count()
+        context["total_vendido"] = Sale.objects.total_ventas_dia()
+        context["total_anulado"] = Sale.objects.total_ventas_anuladas_dia()
+        context["num_ventas_hoy"] = Sale.objects.ventas_no_cerradas().count()
         return context
     
 

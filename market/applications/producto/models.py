@@ -5,11 +5,10 @@ from django.db import models
 # local
 from .managers import ProductManager
 
-class Marca(TimeStampedModel):
-    """
-        Marca de un producto
-    """
 
+""" Marca de N producto """
+
+class Marca(TimeStampedModel):
     name = models.CharField(
         'Nombre', 
         max_length=30
@@ -22,14 +21,10 @@ class Marca(TimeStampedModel):
     def __str__(self):
         return self.name
 
-
+""" Proveedor del N producto """
 class Provider(TimeStampedModel):
-    """
-        Proveedore de Producto
-    """
-
     name = models.CharField(
-        'Razon Social', 
+        'Razon Social',
         max_length=100
     )
     email = models.EmailField(
@@ -45,8 +40,6 @@ class Provider(TimeStampedModel):
         'sitio web',
         blank=True,
     )
-
-
     class Meta:
         verbose_name = 'Proveedor'
         verbose_name_plural = 'Proveedores'
@@ -54,37 +47,25 @@ class Provider(TimeStampedModel):
     def __str__(self):
         return self.name
 
-
+""" Proveedor  """
 class Product(TimeStampedModel):
-    """
-        Producto
-    """
-
     UNIT_CHOICES = (
         ('0', 'Kilogramos'),
         ('1', 'Litros'),
         ('2', 'Unidades'),
     )
-
+    name = models.CharField(
+        'Nombre',
+        max_length=40
+    )
 
     barcode = models.CharField(
         max_length=13,
         unique=True
     )
-    name = models.CharField(
-        'Nombre', 
-        max_length=40
-    )
-    provider = models.ForeignKey(
-        Provider, 
-        on_delete=models.CASCADE
-    )
-    marca = models.ForeignKey(
-        Marca, 
-        on_delete=models.CASCADE
-    )
+
     due_date = models.DateField(
-        'fehca de vencimiento',
+        'fecha de vencimiento',
         blank=True, 
         null=True
     )
@@ -92,14 +73,11 @@ class Product(TimeStampedModel):
         'descripcion del producto',
         blank=True,
     )
+
     unit = models.CharField(
         'unidad de medida',
         max_length=1,
         choices=UNIT_CHOICES, 
-    )
-    count = models.PositiveIntegerField(
-        'cantidad en almacen',
-        default=1
     )
     purchase_price = models.DecimalField(
         'precio compra',
@@ -115,11 +93,26 @@ class Product(TimeStampedModel):
         'numero de ventas',
         default=0
     )
+    count = models.PositiveIntegerField(
+        'cantidad en almacen',
+        default=1
+    )
     anulate = models.BooleanField(
         'eliminado',
         default=False
     )
-
+    """"""""""""""""""""""""
+    """ Llaves Foraneas  """
+    """"""""""""""""""""""""
+    provider = models.ForeignKey(
+        Provider,
+        on_delete=models.CASCADE
+    )
+    marca = models.ForeignKey(
+        Marca,
+        on_delete=models.CASCADE
+    )
+    """Objeto administrador"""
     #
     objects = ProductManager()
 

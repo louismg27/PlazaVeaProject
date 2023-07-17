@@ -16,7 +16,22 @@
 <!--    </div>-->
   </div>
 
-  <div class="grid-x grid-margin-x">
+  <div class="grid-x grid-margin-x " style="display:flex; justify-content:center;">
+
+    <div class="cell medium-4  card-container " style="margin-top:0;" >
+      <div class="display: flex; flex-column;" style="gap: 0; margin-top:0">
+        <div class="flex-column" style="margin:none;">
+          <div class="coin-base">
+            <img src="https://i.postimg.cc/T1F1K0bW/Ethereum.png" alt="Ethereum" class="small-image"/>
+            <h2>TOTAL A COBRAR:</h2>
+          </div>
+          <div class="cell medium-4 callout alert" style="text-align: center; background-color:black;">
+            <h3 style="color:white;"> $ {{ total_cobrar }}</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <form class=" cell input-group"    method="POST">{% csrf_token %}
       <span class="input-group-label" >COD/CAN:</span>
       {{ form.barcode }}
@@ -25,6 +40,7 @@
         <input type="submit" class="button secondary" value="Agregar">
       </div>
     </form>
+
     <h3 class="cell" style="text-align: center; color:white;">ULTIMAS VENTAS REALIZADAS</h3>
     <div class="cell">
       <table>
@@ -97,15 +113,17 @@
           </table>
 
     <!-- Boton Pagar Todo_-->
-          <div id="pagar" style="display: flex; justify-content: center; flex:1; margin:none; align-items:center;">
+          <div  id="pagar" style="display: flex; justify-content: center; flex:1; margin:none; align-items:center;">
             <form class=" " action="{% url 'venta_app:venta-simple' %}" method="POST" style="width: 100%;">
               {% csrf_token %}
               <button type="submit" class="button success" style="width: 50%; ">
                 <i class="fi-shopping-cart"></i>
-                <span style="color:black;">Pagar Productos</span>
+                <span style="color:black;">PAGAR PRODUCTOS</span>
               </button>
             </form>
           </div>
+
+
 
       </div>
 
@@ -145,7 +163,7 @@
   <!-- modal para el cobrar con comprobante de pago -->
   <div class="reveal" id="exampleModal1" data-reveal>
     <h3>Detalle del comprobante de pago</h3>
-    <form action="{% url 'venta_app:venta-voucher' %}" class="grid-x grid-margin-x" 
+    <form action="{% url 'venta_app:venta-voucher' %}" class="grid-x grid-margin-x"
       method="POST">{% csrf_token %}
       <div class="cell medium-6">
         <label>Tipo de Pago:</label>

@@ -6,42 +6,63 @@
 
 <div class="grid-x grid-margin-x">
   
-  <div class="cell grid-x grid-margin-x">
-    <div class="cell medium-4 callout success" style="text-align: center;">
-      <h5>Total Ventas Hoy</h5>
-      <h3>S/ {{ total_ventas }}</h3>
+  <div class="cell grid-x grid-margin-x" style="display:flex; justify-content:center;">
+
+    <div class="cell medium-4  card-container">
+      <div class="display: flex; flex-column;" style="gap: 0; margin-top:0">
+        <div class="flex-column" style="margin:none;">
+          <div class="coin-base">
+            <img src="https://i.postimg.cc/T1F1K0bW/Ethereum.png" alt="Ethereum" class="small-image"/>
+            <h2>Ventas de Hoy:</h2>
+          </div>
+          <div class="cell medium-4 callout alert" style="text-align: center; background-color:black;">
+            <h3 style="color:white;"> $ {{ total_vendido }}</h3>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="cell medium-4 callout primary" style="text-align: center;">
-      <h5>Total Anulaciones</h5>
-      <h3>S/ {{ total_anulaciones }}</h3>
+
+
+    <div class="cell medium-4  card-container">
+      <div class="display: flex; flex-column;" style="gap: 0; margin-top:0">
+        <div class="flex-column" style="margin:none;">
+          <div class="coin-base">
+            <img src="https://i.postimg.cc/T1F1K0bW/Ethereum.png" alt="Ethereum" class="small-image"/>
+            <h2>Total Ventas:</h2>
+          </div>
+          <div class="cell medium-4 callout alert" style="text-align: center; background-color:black;">
+            <h3 style="color:white;">S/. {{ num_ventas_hoy }}</h3>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="cell medium-4 callout alert" style="text-align: center;">
-      <h5>Productos en 0</h5>
-      <h3>{{ stok_cero }}</h3>
-    </div>
+
+
   </div>
 
-  <div class="cell">
-    <h4 class="cell">Informe de Ingresas en la semana:</h4>
-    <div class="cell">
-      <table class="hover">
-        <thead>
+  <div class="cell grid-x grid-margin-x" style="height: 200px; display: flex; align-items: center; justify-content: center;">
+    <div style="display: flex; justify-content: center; align-items: center;flex-direction:column;">
+      <h4 class="cell" style="color:white;">Informe de Ingresos en la semana:</h4>
+      <div class="cell">
+        <table class="hover">
+          <thead>
           <th>Fecha</th>
           <th>Numero Ventas</th>
           <th>Total Vendido</th>
           <th>Total Ganancias</th>
-        </thead>
-        <tbody>
+          </thead>
+          <tbody>
           {% for venta in resumen_semana %}
-            <tr>
-              <td>{{ venta.sale__date_sale__date }}</td>
-              <td>{{ venta.num_ventas }}</td>
-              <td>{{ venta.total_vendido }}</td>
-              <td>{{ venta.total_ganancias }}</td>
-            </tr>
+          <tr>
+            <td>{{ venta.sale__date_sale__date }}</td>
+            <td>{{ venta.num_ventas }}</td>
+            <td>{{ venta.total_vendido }}</td>
+            <td>{{ venta.total_ganancias }}</td>
+          </tr>
           {% endfor %}
-        </tbody>
-      </table>
+          </tbody>
+        </table>
+      </div>
     </div>
   </div>
 </div>

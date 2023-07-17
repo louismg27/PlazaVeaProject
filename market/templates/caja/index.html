@@ -7,56 +7,39 @@
 <div class="grid-x grid-margin-x">
   <h4 class="cell" style="color:white ">Detalle de las ventas del Dia:</h4>
 <!--  CARDS 03-->
-    <div class="cell grid-x grid-margin-x">
+  <div class="cell grid-x grid-margin-x" style="display:flex; justify-content:center;">
 
-      <div class="cell medium-4  card-container">
-        <div class="display: flex; flex-column;" style="gap: 0; margin-top:0">
-          <div class="flex-column" style="margin:none;">
-            <div class="coin-base">
-              <img src="https://i.postimg.cc/T1F1K0bW/Ethereum.png" alt="Ethereum" class="small-image"/>
-              <h2>Ventas de Hoy:</h2>
-            </div>
-            <div class="cell medium-4 callout alert" style="text-align: center; background-color:black;">
-              <h3 style="color:white;"> $ {{ total_vendido }}</h3>
-            </div>
+    <div class="cell medium-4  card-container">
+      <div class="display: flex; flex-column;" style="gap: 0; margin-top:0">
+        <div class="flex-column" style="margin:none;">
+          <div class="coin-base">
+            <img src="https://i.postimg.cc/T1F1K0bW/Ethereum.png" alt="Ethereum" class="small-image"/>
+            <h2>Ventas de Hoy:</h2>
+          </div>
+          <div class="cell medium-4 callout alert" style="text-align: center; background-color:black;">
+            <h3 style="color:white;"> $ {{ total_vendido }}</h3>
           </div>
         </div>
       </div>
-
-      <div class="cell medium-4  card-container">
-        <div class="display: flex; flex-column;" style="gap: 0; margin-top:0">
-          <div class="flex-column" style="margin:none;">
-            <div class="coin-base">
-              <img src="https://i.postimg.cc/T1F1K0bW/Ethereum.png" alt="Ethereum" class="small-image"/>
-              <h2>Total Anulaciones:</h2>
-            </div>
-            <div class="cell medium-4 callout alert" style="text-align: center; background-color:black;">
-              <h3 style="color:white;">{{ total_anulado }}</h3>
-            </div>
-          </div>
-        </div>
-      </div>
-
-
-      <div class="cell medium-4  card-container">
-        <div class="display: flex; flex-column;" style="gap: 0; margin-top:0">
-          <div class="flex-column" style="margin:none;">
-            <div class="coin-base">
-              <img src="https://i.postimg.cc/T1F1K0bW/Ethereum.png" alt="Ethereum" class="small-image"/>
-              <h2>Total Ventas:</h2>
-            </div>
-            <div class="cell medium-4 callout alert" style="text-align: center; background-color:black;">
-              <h3 style="color:white;">S/. {{ num_ventas_hoy }}</h3>
-            </div>
-          </div>
-        </div>
-      </div>
-<!--      <div class="cell medium-4 callout alert" style="text-align: center;">-->
-<!--        <h5>Total Ventas</h5>-->
-<!--        <h3>{{ num_ventas_hoy }}</h3>-->
-<!--      </div>-->
-
     </div>
+
+
+    <div class="cell medium-4  card-container">
+      <div class="display: flex; flex-column;" style="gap: 0; margin-top:0">
+        <div class="flex-column" style="margin:none;">
+          <div class="coin-base">
+            <img src="https://i.postimg.cc/T1F1K0bW/Ethereum.png" alt="Ethereum" class="small-image"/>
+            <h2>Total Ventas:</h2>
+          </div>
+          <div class="cell medium-4 callout alert" style="text-align: center; background-color:black;">
+            <h3 style="color:white;">S/. {{ num_ventas_hoy }}</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
 
 
     <!--     Reporte de ventas final-->

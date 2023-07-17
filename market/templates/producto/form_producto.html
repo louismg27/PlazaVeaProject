@@ -14,6 +14,7 @@
         {{form.name}}
       </div>
     </div>
+<!--Ingreso de Codigo de Barras-->
     <div class="cell medium-6">
       <label style="color:white;">Codigo de barras:</label>
 
@@ -29,27 +30,29 @@
       {% endfor %}
     </div>
 
-
+<!--Ingreso de Proveedor-->
     <div class="cell medium-6">
       <label style="color:white;">Proveedor:</label>
       <div class="input-group" style="">
         {{form.provider}}
       </div>
     </div>
+<!--Ingreso de Marca-->
     <div class="cell medium-6">
       <label style="color:white;">Marca:</label>
       <div class="input-group">
         {{form.marca}}
       </div>
     </div>
-
+<!--Ingreso de Unidad de Medida-->
     <div class="cell medium-6">
         <label style="color:white;">Unidad de Medida:</label>
         <div class="input-group">
           <span class="input-group-label"><i class="fi-price-tag"></i></span>
           {{ form.unit }}
         </div>
-      </div>
+    </div>
+<!--Ingreso de fecha de vencimiento-->
     <div class="cell medium-6">
       <label style="color:white;">Fecha de Vencimiento:</label>
       <div class="input-group">
@@ -57,7 +60,7 @@
         {{ form.due_date }}
       </div>
     </div>
-
+<!--Ingreso de Precio Compra-->
     <div class="cell medium-6">
         <label style="color:white;">Precio Compra:</label>
         <div class="input-group">
@@ -70,6 +73,7 @@
           </p>
         {% endfor %}
     </div>
+<!--Ingreso de Precio Venta-->
     <div class="cell medium-6">
         <label style="color:white;">Precio Venta:</label>
         <div class="input-group">
@@ -82,7 +86,7 @@
           </p>
         {% endfor %}
     </div>
-
+<!--Ingreso Cantidad en almacen-->
     <div class="cell medium-12">
       <label style="color:white;">Cantidad en Almacen:</label>
       <div class="input-group">
@@ -90,7 +94,7 @@
         {{form.count}}
       </div>
     </div>
-
+<!--Ingreso descripcion de producto-->
     <div class="cell medium-12">
         <label style="color:white;">Descripcion del producto:</label>
         <div class="input-group">
@@ -98,7 +102,7 @@
         </div>
       </div>
     
-
+<!--Boton Guardar-->
     <div class="  cell medium-12 width:100%; height:100%; width:100%; display:flex; flex-direction:row;">
       <button type="submit" class="btn  "  >Guardar</button>
       {% if product %}
@@ -107,6 +111,7 @@
         {% endif %}
       </div>
     </div>
+
   </form>
 </div>
 

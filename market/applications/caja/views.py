@@ -30,6 +30,8 @@ class ReporteCierreCajaView(ListView):
 
         return context
 
+    def get_queryset(self):
+        return SaleDetail.objects.resumen_ventas_mes()
 
 
 class ProcesoCerrarCajaView(VentasPermisoMixin, View):
